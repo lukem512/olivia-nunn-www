@@ -153,8 +153,8 @@
       }
 
       // Ensure the map is full height
-      var body = document.body, html = document.documentElement;
-      var height = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
+      var height = $('#container').height();
+      height += (height / 10);
       document.getElementById('maps').style.height = height + 'px';
     };
 
