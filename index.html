@@ -16,8 +16,9 @@
       width: 100%;
     }
 
-    #maps { 
-      height: 100%;
+    #maps {
+      height: 100vh; 
+      min-height: 100% !important;
       width: 100%; 
       position: absolute; 
       top: 0; 
@@ -104,7 +105,7 @@
     <div id="inner">
       <h1 class="title">Olivia Nunn</h1> <span class="letters">BMus, MDip, Etc.</span>
       <div class="img-container">
-        <img class="img-circle" src="http://i.imgur.com/kn3HvEG.jpg" title="Hello!"></img>
+        <img class="img-circle" src="https://i.imgur.com/kn3HvEG.jpg" title="Hello!"></img>
       </div>
       <p>I'm a freelance piano teacher in Bristol. I teach from absolute beginner to grade 8, all ages and abilities are welcome.</p>
       <p>If you're interested in learning to play, please get in touch by ringing <a id="phone" href="tel:07443512806" title="Click to call me!">07443512806</a> or by sending me an email at <a id="email" href="mailto:olivianunn@hotmail.co.uk" title="Click to email me!">olivianunn@hotmail.co.uk</a>.</p>
@@ -144,15 +145,17 @@
     function redraw() {
       updateMargin();
 
+      // Update the map if we need more width!
       var width = jQuery(window).width();
       if (width > 0 && width > prevMapWidth) {
         showGoogleMaps();
         prevMapWidth = width;
       }
 
-      // TODO: Ensure the map fills the screen height
-      var height = jQuery(window).height();
-      $('#maps').css('height', height);
+      // Ensure the map is full height
+      var body = document.body, html = document.documentElement;
+      var height = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
+      document.getElementById('maps').style.height = height + 'px';
     };
 
     window.onload = function(e) {
