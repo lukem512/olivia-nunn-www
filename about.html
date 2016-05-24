@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Olivia Nunn</title>
+  <link href="data:image/x-icon;base64,AAABAAEAEBAAAAAAAABoBQAAFgAAACgAAAAQAAAAIAAAAAEACAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAAAAAAAAmpqaAHx8fACMjIwA4eHhAKenpwDHx8cATU1NALKysgDw8PAA6enpAGhoaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQACCgAAAAAAAAAAAAAACgAAAAEAAAkECQAAAAAAAAAGAAcAAAMAAAAKAAAAAAAAAAAAAAAFAAAAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAAAAAAAAAAAACwAAAAAAAAAAAAAHAAAAAAAAAAAAAAAAAAAAAAAAAAoIBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOH/AADBjwAA4QcAAP0HAAD9hwAA/fcAAP33AAD99wAA/fcAAPz3AAD8BwAA/AcAAP/HAAD//wAA//8AAP//AAA=" rel="icon" type="image/x-icon" />
+  <!-- By Luke Mitchell, http://lukemitchell.co -->
+  <link href='https://fonts.googleapis.com/css?family=Playfair+Display' rel='stylesheet' type='text/css'>
+  <link href='./style.css' rel='stylesheet' type='text/css'>
+  <script src="https://use.fontawesome.com/73a46bac90.js"></script>
+  <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+  <script async defer src="https://code.jquery.com/ui/1.12.0-beta.1/jquery-ui.min.js"></script>
+</head>
+<body>
+  <div id="maps"></div>
+  <div id="spacer-top"></div>
+  <div id="menu">
+    <a href="#">
+      <i class="fa fa-bars" aria-hidden="true"></i>
+    </a>
+    <div id="menu-items">
+      <li><a href="index.html" title="Home page">Home</a></li>
+      <li><a href="#" title="About me">About</a></li>
+      <li><a href="piano.html" title="More information about piano lessons">Piano Lessons</a></li>
+      <li><a href="musictheory.html" title="More information about music theory">Music Theory</a></li>
+      <li><a href="qualifications.html" title="My qualifications and experience">Qualifications</a></li>
+      <!-- <li><a href="testimonials.html" title="Read my independent testimonials">Testimonials</a></li> -->
+      <li><a href="contact.html" title="View my contact information">Contact</a></li>
+    </div>
+  </div>
+  <div id="container">
+    <div id="inner">
+      <h1 class="title">About</h1>
+      <p>I began playing piano at the age of 6 and never really stopped! I progressed through my ABRSM piano grades whilst at primary and secondary school in Godalming, Surrey, where I grew up, and regularly took part in the Godalming Music Festival competitions. As a child I enjoyed taking part in school plays (performing, making/mending costumes, or playing the piano in the band), attending theatre and dance club, ballet classes, craft activities, singing as part of the Guildford Cathedral Choir, and playing the piano in my secondary school jazz band. My first job, aged 14, was working in a dance shop, and I began with my first piano student at around the same time. I also enjoyed babysitting for various neighbours and family friends.</p>
+      <p>At the age of 16 I got a music scholarship and bursary to attend Charterhouse School for 6th form. I furthered my musical education there, helped by musical director, Mark Shepherd, and my incredible piano teacher, Rosemary Dines, amongst others. During my 2 years at Charterhouse I attempted to learn the bassoon, sang in 5 choirs, going on tour and recording a couple of CDs as well as the regular rehearsals and chapel services, and completed my piano diploma and Cambridge Pre-Us (A-level equivalents) in music, maths and history. In the holidays I worked at summer camps held at Charterhouse, hosting children from China and Hong Kong for several weeks of lessons, outdoors activities and cultural day trips.</p>
+      <p>In 2011 I moved to Bristol to do a music degree at the University of Bristol. I studied a range of topics including music history and research, composition, harmony, and performance. I studied solo classical piano performance with Raymond Clarke, who also gave me lots of accompanying tips which I put into practise accompanying friends recitals, chamber ensembles, opera society rehearsals/shows, and the university Choral Society, conducted by John Pickard, then the director of music at Bristol University. I taught piano alongside my studies, and worked as a waitress for a catering agency.</p>
+      <p>I loved Bristol so much I decided to stay after graduating and now live in St Andrews, working as a self employed piano teacher and accompanist. I teach over 30 students in my local area, ranging from beginner to post grade 8 standard, and ages 4 to 55. I accompany the Bristol Hippodrome Choir, run by local musician Victoria Bourne, and instrumental music exams. I live with some of my best friends from university and our dog, Pancakes! Apart from the obvious love of music and the piano, I also love being creative, and can often be found crocheting or making other crafts, often using ‘junk’ materials. You might also find me in my garden looking after our vegetables and herbs! I also love cycling, yoga, running, cooking, reading, socialising, drinking tea, travelling and exploring.</p>
+    </div>
+  </div>
+  <div id="spacer-top"></div>
+  <script type="text/javascript">
+    // Globals
+    var prevMapWidth = 0;
+
+    // Update top margin size
+    function updateMargin() {
+      // Update the margin
+      var width = jQuery(window).width();
+      $('#spacer-top').css('height', width / 20);
+      $('#spacer-bottom').css('height', width / 20)
+    };
+    updateMargin();
+
+    // Show the map in the background
+    function showGoogleMaps() {
+      var latLng = new google.maps.LatLng(51.471948, -2.578000);
+
+      var mapOptions = {
+        zoom: 16,
+        streetViewControl: false,
+        disableDefaultUI: true,
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        center: latLng
+      };
+
+      map = new google.maps.Map(document.getElementById('maps'),
+        mapOptions);
+    };
+
+    // Redraw the website
+    function redraw() {
+      updateMargin();
+
+      // Update the map if we need more width!
+      var width = jQuery(window).width();
+      if (width > 0 && width > prevMapWidth) {
+        showGoogleMaps();
+        prevMapWidth = width;
+      }
+
+      // Ensure the map is full height
+      var height = $('#container').height();
+      height += (height / 10);
+      document.getElementById('maps').style.height = height + 'px';
+    };
+
+    window.onload = function(e) {
+      redraw();
+
+      // Hover effects
+      $('a').hover(
+        function() {
+          $(this).animate({ color: "#ff8300" }, 'fast');
+        },
+        function() {
+          $(this).animate({ color: "#ffffff" }, 'fast');
+        }
+      );
+    };
+
+    window.onresize = function(e) {
+      redraw();
+    };
+  </script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?callback=redraw"></script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Olivia Nunn</title>
+  <link href="data:image/x-icon;base64,AAABAAEAEBAAAAAAAABoBQAAFgAAACgAAAAQAAAAIAAAAAEACAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAAAAAAAAmpqaAHx8fACMjIwA4eHhAKenpwDHx8cATU1NALKysgDw8PAA6enpAGhoaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQACCgAAAAAAAAAAAAAACgAAAAEAAAkECQAAAAAAAAAGAAcAAAMAAAAKAAAAAAAAAAAAAAAFAAAAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAAAAAAAAAAAACwAAAAAAAAAAAAAHAAAAAAAAAAAAAAAAAAAAAAAAAAoIBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOH/AADBjwAA4QcAAP0HAAD9hwAA/fcAAP33AAD99wAA/fcAAPz3AAD8BwAA/AcAAP/HAAD//wAA//8AAP//AAA=" rel="icon" type="image/x-icon" />
+  <!-- By Luke Mitchell, http://lukemitchell.co -->
+  <link href='https://fonts.googleapis.com/css?family=Playfair+Display' rel='stylesheet' type='text/css'>
+  <link href='./style.css' rel='stylesheet' type='text/css'>
+  <script src="https://use.fontawesome.com/73a46bac90.js"></script>
+  <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+  <script async defer src="https://code.jquery.com/ui/1.12.0-beta.1/jquery-ui.min.js"></script>
+</head>
+<body>
+  <div id="maps"></div>
+  <div id="spacer-top"></div>
+  <div id="menu">
+    <a href="#">
+      <i class="fa fa-bars" aria-hidden="true"></i>
+    </a>
+    <div id="menu-items">
+      <li><a href="index.html" title="Home page">Home</a></li>
+      <li><a href="about.html" title="About me">About</a></li>
+      <li><a href="piano.html" title="More information about piano lessons">Piano Lessons</a></li>
+      <li><a href="#" title="More information about music theory">Music Theory</a></li>
+      <li><a href="qualifications.html" title="My qualifications and experience">Qualifications</a></li>
+      <!-- <li><a href="testimonials.html" title="Read my independent testimonials">Testimonials</a></li> -->
+      <li><a href="contact.html" title="View my contact information">Contact</a></li>
+    </div>
+  </div>
+  <div id="container">
+    <div id="inner">
+      <h1 class="title">Music Theory</h1>
+      <p>I will be beginning a music theory club in September 2016. This will run every other Saturday afternoon at <a href="http://www.mickleburgh.co.uk/" target="_blank">Mickleburgh Music</a>, Stokes Croft. The aim is to take you from the basics all the way to being prepared for the ABRSM grade 5 music theory exam. This class will, therefore, be for those who have already been taking lessons in an instrument for some time, or have some knowledge of music and are able to read music.</p>
+      <p>If you have any other music theory needs please don’t hesitate to get in touch as I am still in the process of organising this class and am very happy to work around demand!</p>
+      <p>Rates are to be confirmed.</p>
+    </div>
+  </div>
+  <div id="spacer-top"></div>
+  <script type="text/javascript">
+    // Globals
+    var prevMapWidth = 0;
+
+    // Update top margin size
+    function updateMargin() {
+      // Update the margin
+      var width = jQuery(window).width();
+      $('#spacer-top').css('height', width / 20);
+      $('#spacer-bottom').css('height', width / 20)
+    };
+    updateMargin();
+
+    // Show the map in the background
+    function showGoogleMaps() {
+      var latLng = new google.maps.LatLng(51.471948, -2.578000);
+
+      var mapOptions = {
+        zoom: 16,
+        streetViewControl: false,
+        disableDefaultUI: true,
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        center: latLng
+      };
+
+      map = new google.maps.Map(document.getElementById('maps'),
+        mapOptions);
+    };
+
+    // Redraw the website
+    function redraw() {
+      updateMargin();
+
+      // Update the map if we need more width!
+      var width = jQuery(window).width();
+      if (width > 0 && width > prevMapWidth) {
+        showGoogleMaps();
+        prevMapWidth = width;
+      }
+
+      // Ensure the map is full height
+      var height = $('#container').height();
+      height += (height / 10);
+      document.getElementById('maps').style.height = height + 'px';
+    };
+
+    window.onload = function(e) {
+      redraw();
+
+      // Hover effects
+      $('a').hover(
+        function() {
+          $(this).animate({ color: "#ff8300" }, 'fast');
+        },
+        function() {
+          $(this).animate({ color: "#ffffff" }, 'fast');
+        }
+      );
+    };
+
+    window.onresize = function(e) {
+      redraw();
+    };
+  </script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?callback=redraw"></script>
+</body>
+</html>
