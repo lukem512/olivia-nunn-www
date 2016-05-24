@@ -1,0 +1,154 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+#maps {
+  height: 100vh;
+  min-height: 100% !important;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+}
+
+#menu {
+  position: fixed;
+  top: 0.5em;
+  right: 4%;
+  z-index: 2;
+
+  text-align: center;
+  background: black;
+  width: 1em;
+  height: 1em;
+  font-size: 1.2em;
+  background: rgba(0, 0, 0, 0.75);
+  color: white;
+
+  padding: 0.3em;
+  border-radius: 0.4em;
+  /*box-shadow: 0.1em 0.1em 0.1em #888888;*/
+}
+
+#menu a {
+  color: white;
+}
+
+#menu #menu-items {
+  display: none;
+  position: fixed;
+  right: 4%;
+  top: 1.8em;
+  z-index: 2;
+
+  text-align: right;
+  background: black;
+  min-width: 1.2em;
+  background: rgba(0, 0, 0, 0.9);
+  color: white;
+
+  padding: 0.3em;
+  border-radius: 0.4em;
+}
+
+#menu #menu-items li {
+  list-style-type: none;
+}
+
+#menu #menu-items li:not(:last-child) {
+  margin-bottom: 0.3em;
+}
+
+#menu:hover #menu-items {
+  display: inline-block;
+}
+
+#container {
+  font-family: serif;
+  font-size: 1.8em;
+  position: relative;
+  z-index: 1;
+  width: 90%;
+  margin: 0 auto 0;
+  padding: 0.2em;
+
+  background: black;
+  height: auto;
+  background: rgba(0, 0, 0, 0.75);
+  color: white;
+  border-radius: 0.4em;
+  box-shadow: 0.2em 0.2em 0.1em #888888;
+  font-family: 'Playfair Display', serif;
+  overflow: hidden;
+}
+
+#container a {
+  color: white;
+}
+
+#container p {
+  word-wrap: break-word;
+}
+
+.img-container {
+  float: right;
+  width: 20%;
+}
+
+@media all and (max-width: 599px) {
+  .img-container {
+    text-align: center;
+    float: center;
+    width: 100%;
+  }
+}
+
+.img-circle {
+  border-radius: 50%;
+  -o-object-fit: contain;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.title {
+  display: inline;
+  letter-spacing: 0.05em;
+  font-weight: normal;
+}
+
+.subtitle {
+  display: block;
+  text-decoration: underline;
+  font-size: 1em;
+  margin-bottom: 0.1em;
+}
+
+.list {
+  font-size: 0.7em;
+}
+
+.letters {
+  font-size: 0.5em;
+  font-variant: small-caps;
+}
+
+.letters .letters-pair {
+  white-space: nowrap;
+}
+
+#spacer-top,
+#spacer-bottom {
+  min-height: 10px;
+  width: 100%;
+}
+
+#inner {
+  margin: 0.2em;
+}
