@@ -88,10 +88,6 @@ html, body {
   overflow: hidden;
 }
 
-#container a {
-  color: white;
-}
-
 #container p {
   word-wrap: break-word;
 }
@@ -151,4 +147,13 @@ html, body {
 
 #inner {
   margin: 0.2em;
+}
+
+a {
+  color: white;
+  transition: all .2s ease-in-out;
+}
+
+a:hover {
+  color: #ff8300;
 }
