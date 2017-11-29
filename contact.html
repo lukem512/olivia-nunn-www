@@ -24,9 +24,7 @@
       <li><a href="index.html" title="Home page">Home</a></li>
       <li><a href="about.html" title="About me">About</a></li>
       <li><a href="piano.html" title="More information about piano lessons">Piano Lessons</a></li>
-      <li><a href="musictheory.html" title="More information about music theory">Music Theory</a></li>
       <li><a href="qualifications.html" title="My qualifications and experience">Qualifications</a></li>
-      <!-- <li><a href="testimonials.html" title="Read my independent testimonials">Testimonials</a></li> -->
       <li><a href="#" title="View my contact information">Contact</a></li>
     </div>
   </div>
@@ -87,16 +85,6 @@
 
     window.onload = function(e) {
       redraw();
-
-      // Hover effects
-      $('a').hover(
-        function() {
-          $(this).animate({ color: "#ff8300" }, 'fast');
-        },
-        function() {
-          $(this).animate({ color: "#ffffff" }, 'fast');
-        }
-      );
     };
 
     window.onresize = function(e) {
