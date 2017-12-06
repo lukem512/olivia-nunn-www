@@ -9,21 +9,22 @@
   <!-- By Luke Mitchell, http://lukemitchell.co -->
   <link href='https://fonts.googleapis.com/css?family=Playfair+Display' rel='stylesheet' type='text/css'>
   <link href='./style.css' rel='stylesheet' type='text/css'>
-  <script src="https://use.fontawesome.com/73a46bac90.js"></script>
   <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
   <script async defer src="https://code.jquery.com/ui/1.12.0-beta.1/jquery-ui.min.js"></script>
 </head>
 <body>
   <div id="maps"></div>
   <div id="spacer-top"></div>
-  <div id="menu">
-    <a href="#">
-      <i class="fa fa-bars" aria-hidden="true"></i>
+  <div id="menu-button">
+    <a href="#" onclick="toggleDrawer()">
+      <img id="menu-icon" src="./img/hamburger.png" title="Menu"></img>
     </a>
-    <div id="menu-items">
+  </div>
+  <div id="menu-drawer">
+    <div id="items">
       <li><a href="index.html" title="Home page">Home</a></li>
       <li><a href="about.html" title="About me">About</a></li>
-      <li><a href="#" title="More information about piano lessons">Piano Lessons</a></li>
+      <li><a href="#" id="active" title="More information about piano lessons">Piano Lessons</a></li>
       <li><a href="qualifications.html" title="My qualifications and experience">Qualifications</a></li>
       <li><a href="contact.html" title="View my contact information">Contact</a></li>
     </div>
@@ -91,6 +92,7 @@
       redraw();
     };
   </script>
+  <script src="./scripts/menu.js"></script>
   <script async defer src="https://maps.googleapis.com/maps/api/js?callback=redraw"></script>
 </body>
 </html>

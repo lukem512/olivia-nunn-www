@@ -3,6 +3,7 @@ html, body {
   padding: 0;
   height: 100%;
   width: 100%;
+  background-color: #dfdfdf;
 }
 
 #maps {
@@ -17,56 +18,79 @@ html, body {
   z-index: 0;
 }
 
-#menu {
+img#menu-icon {
+  width: 1em;
+  height: 1em;
+}
+
+#menu-button {
   position: fixed;
   top: 0.5em;
-  right: 4%;
-  z-index: 2;
+  right: 0.5em;
+  z-index: 9;
 
   text-align: center;
-  background: black;
   width: 1em;
   height: 1em;
   font-size: 1.2em;
-  background: rgba(0, 0, 0, 0.75);
+  background: rgba(255, 131, 0, 0.9);
   color: white;
 
-  padding: 0.3em;
-  border-radius: 0.4em;
-  /*box-shadow: 0.1em 0.1em 0.1em #888888;*/
+  padding: 0.6em;
+  border-radius: 50%;
+  box-shadow: 0.1em 0.1em 0.3em rgba(0, 0, 0, 0.4);
 }
 
-#menu a {
-  color: white;
-}
-
-#menu #menu-items {
-  display: none;
+#menu-drawer {
+  transition: all ease-in-out;
   position: fixed;
-  right: 4%;
-  top: 1.8em;
+  top: 0;
+  right: 0;
+  min-height: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  transition: all 0.2s ease-in-out;
+  width: 0;
+  overflow: hidden;
+  border-radius: 0.1em;
+  box-shadow: 0.1em 0.1em 0.3em rgba(0, 0, 0, 0.4);
   z-index: 2;
+  padding-top: 3em;
+}
 
+#menu-drawer #items {
+  padding: 0.5em 1em;
   text-align: right;
-  background: black;
-  min-width: 1.2em;
-  background: rgba(0, 0, 0, 0.9);
+  transition: all 0.2s ease-in-out;
+  opacity: 0;
+}
+
+#menu-drawer a {
+  font-size: 1em;
   color: white;
-
-  padding: 0.3em;
-  border-radius: 0.4em;
+  text-decoration: none;
 }
 
-#menu #menu-items li {
+#menu-drawer a:hover {
+  color: #ff8300;
+}
+
+#menu-drawer a#active {
+  color: #ff8300;
+}
+
+#menu-drawer li {
   list-style-type: none;
+  margin: 0.5em 0;
 }
 
-#menu #menu-items li:not(:last-child) {
-  margin-bottom: 0.3em;
+#menu-drawer.menu-open {
+  transition-delay: 0.5s;
+  width: 8em !important;
 }
 
-#menu:hover #menu-items {
-  display: inline-block;
+#menu-drawer.menu-open #items {
+  transition-delay: 0.7s;
+  opacity: 1 !important;
 }
 
 #container {
@@ -75,21 +99,30 @@ html, body {
   position: relative;
   z-index: 1;
   width: 90%;
-  margin: 0 auto 0;
+  margin: 0 auto;
   padding: 0.2em;
 
   background: black;
   height: auto;
   background: rgba(0, 0, 0, 0.75);
   color: white;
-  border-radius: 0.4em;
-  box-shadow: 0.2em 0.2em 0.1em #888888;
+  border-radius: 0.1em;
+  box-shadow: 0.1em 0.1em 0.3em rgba(0, 0, 0, 0.4);
   font-family: 'Playfair Display', serif;
   overflow: hidden;
+
+  transition: all 0.2s ease-in-out;
 }
 
 #container p {
   word-wrap: break-word;
+}
+
+@media screen and (min-width: 500px) {
+  #container.menu-open {
+    width: calc(90% - 8em) !important;
+    margin-right: 8em !important;
+  }
 }
 
 .img-container {
@@ -117,6 +150,7 @@ html, body {
   display: inline;
   letter-spacing: 0.05em;
   font-weight: normal;
+  margin-bottom: 0;
 }
 
 .subtitle {
