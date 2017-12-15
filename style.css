@@ -65,7 +65,7 @@ img#menu-icon {
 }
 
 #menu-drawer a {
-  font-size: 1em;
+  font-size: 1.2em;
   color: white;
   text-decoration: none;
 }
@@ -85,7 +85,7 @@ img#menu-icon {
 
 #menu-drawer.menu-open {
   transition-delay: 0.5s;
-  width: 8em !important;
+  width: 10em !important;
 }
 
 #menu-drawer.menu-open #items {
@@ -121,7 +121,7 @@ img#menu-icon {
 @media screen and (min-width: 500px) {
   #container.menu-open {
     width: calc(90% - 8em) !important;
-    margin-right: 8em !important;
+    margin-right: 9em !important;
   }
 }
 
