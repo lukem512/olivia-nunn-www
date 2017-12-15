@@ -4,9 +4,12 @@ var prevMapWidth = 0;
 // Update top margin size
 function updateMargin() {
   // Update the margin
-  var width = jQuery(window).width();
-  $('#spacer-top').css('height', width / 20);
-  $('#spacer-bottom').css('height', width / 20)
+  var width = document.documentElement.clientWidth;
+  var top = document.getElementById('spacer-top');
+  var bottom = document.getElementById('spacer-bottom');
+  var newHeight = (width / 20) + 'px';
+  if (top) top.style.height = newHeight;
+  if (bottom) bottom.style.height = newHeight;
 };
 updateMargin();
 
@@ -31,14 +34,14 @@ function redraw() {
   updateMargin();
 
   // Update the map if we need more width!
-  var width = jQuery(window).width();
+  var width = document.documentElement.clientWidth;
   if (width > 0 && width > prevMapWidth) {
     showGoogleMaps();
     prevMapWidth = width;
   }
 
   // Ensure the map is full height
-  var height = $('#container').height();
+  var height = document.getElementById('container').clientHeight;
   height += (height / 10);
   document.getElementById('maps').style.height = height + 'px';
 };
