@@ -39,8 +39,15 @@
         <div class="content">
           <h1>Contact Information</h1>
           <p>I am based in central Bristol and the north of Cambridge. You can contact me via telephone or by sending me an email.</p>
-          <p>Telephone: <a href="tel:07443512806" title="Click here to phone me">07443512806</a><br />
-          Email: <a href="mailto:07443512806" title="Click here to email me">olivianunn@hotmail.co.uk</a></p>
+
+          <p itemscope itemtype="http://schema.org/Person">
+            <!-- First two items of microdata are hidden but will not change -->
+            <span itemprop="name" class="hide">Olivia Nunn</span>
+            <span itemprop="jobTitle" class="hide">Piano Teacher</span>
+
+            <span>Telephone: <a href="tel:07443512806" title="Click here to phone me" itemprop="telephone">07443512806</a></span><br />
+            <span>Email: <a href="mailto:07443512806" itemprop="email" title="Click here to email me">olivianunn@hotmail.co.uk</a></span>
+          </p>
         </div>
     </div>
   </main>

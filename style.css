@@ -218,3 +218,7 @@ td:first-child {
 tr:last-child td {
   border-bottom: none;
 }
+
+.hide {
+  display: none;
+}
