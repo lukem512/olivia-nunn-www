@@ -107,6 +107,10 @@ img {
   .content {
     text-align: center;
   }
+
+  th {
+    text-align: center;
+  }
 }
 
 .img-circle {
@@ -118,6 +122,10 @@ img {
 }
 
 h1 {
+  font-weight: 300;
+}
+
+h2 {
   font-weight: 300;
 }
 
@@ -135,6 +143,10 @@ h1 {
 .letters {
   font-size: 0.4em;
   font-variant: small-caps;
+}
+
+.content .letters {
+  font-size: 0.7em;
 }
 
 .letters .letters-pair {
@@ -166,6 +178,7 @@ button {
   padding: 1em;
   cursor: pointer;
   transition: all .1s ease-in;
+  font-size: 0.7em;
 }
 
 .cta {
@@ -177,4 +190,31 @@ button {
 button:hover {
   background-color: black;
   color: white;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+th {
+  padding: 0.5em;
+  min-width: 10vw;
+  font-weight: 300;
+  text-align: left;
+  border-bottom: 1px solid black;
+}
+
+td {
+  margin: 0;
+  padding: 0.5em;
+  border-bottom: 1px solid lightgrey;
+  border-left: 1px solid lightgrey;
+}
+
+td:first-child {
+  border-left: none;
+}
+
+tr:last-child td {
+  border-bottom: none;
 }
