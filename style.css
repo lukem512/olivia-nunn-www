@@ -90,6 +90,10 @@ img {
 }
 
 @media all and (max-width: 599px) {
+  .menu {
+    flex-direction: column;
+  }
+
   .img-container {
     text-align: center;
     float: center;
