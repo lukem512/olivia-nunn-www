@@ -38,6 +38,14 @@ footer {
   align-items: baseline;
 }
 
+.logo .name a {
+  text-decoration: none;
+}
+
+.logo .name a:hover {
+  color: inherit;
+}
+
 .container {
   color: #262626;
   font-size: 1.2em;
